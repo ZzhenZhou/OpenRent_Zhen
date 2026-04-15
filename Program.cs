@@ -49,7 +49,7 @@ namespace OpenRent
                 return "Invalid input: no letters";
 
             return ReverseString(input)
-                   + GetSmallestLetter(input)
+                   + GetSmallestLetterByUnicodeCaseInsensitive(input)
                    + GetVowelParitySuffix(input);
         }
 
@@ -63,7 +63,7 @@ namespace OpenRent
         /// ignoring non-letter characters.
         /// Assumes input contains at least one letter.
         /// </summary>
-        private static char GetSmallestLetter(string input)
+        private static char GetSmallestLetterByUnicodeCaseInsensitive(string input)
         {
             return input
                 .Where(char.IsLetter)
